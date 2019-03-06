@@ -1,0 +1,14 @@
+<div class="container mt-5">
+  <div class="card bg-success">
+    <div class="card-body text-center">
+      <h1>
+        Welcome to the Student App
+      </h1>
+    </div>
+  </div>
+  <ul>
+    <li class="text" *ngFor="let item of items | async">
+      {{item.name}} - {{item.age}}
+    </li>
+  </ul>
+</div>

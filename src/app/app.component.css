@@ -1,0 +1,21 @@
+.navbar-light .navbar-brand {
+    color: rgba(255,255,255,.9);
+}
+
+.navbar-light .navbar-nav .nav-link{
+    color: #f5f5f5;
+}
+.navbar-light .navbar-nav .active>.nav-link{
+    color: #63d8f5;
+}
+.navbar-light .navbar-toggler{
+    color:#63d8f5;
+}
+.navbar-toggler {
+    background-color: #673AB7;
+    border: 1px solid #673AB7;
+    color:#63d8f5;
+}
+.navbar-toggler-icon{
+    color: #fff;
+}

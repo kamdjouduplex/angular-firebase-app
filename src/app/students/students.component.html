@@ -1,0 +1,66 @@
+<div class="container mt-5">
+  <a [routerLink]="['/new']" class="btn btn-outline-success"> <i class="fa fa-plus" aria-hidden="true"></i> Add New Student</a>
+
+  <table class="table mt-3">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Level</th>
+        <th scope="col">Contact</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>25</td>
+        <td>2</td>
+        <td>6547895621</td>
+        <td>
+          <a href="" class="text-success">
+            <i class="fa fa-eye" aria-hidden="true"></i> view
+          </a> /
+          <a [routerLink]="[2, 'edit']">
+            <i class="fa fa-pencil-square-o" aria-hidden="true"></i> edit
+          </a> / 
+          <a href="" class="text-danger">
+            <i class="fa fa-trash" aria-hidden="true"></i> delete
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Kamdjou</td>
+        <td>25</td>
+        <td>2</td>
+        <td>6547895621</td>
+        <td>
+          <a href="">
+            <i class="fa fa-pencil-square-o" aria-hidden="true"></i> edit
+          </a> / 
+          <a href="" class="text-danger">
+            <i class="fa fa-trash" aria-hidden="true"></i> delete
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Marie</td>
+        <td>35</td>
+        <td>1</td>
+        <td>6547895621</td>
+        <td>
+            <a href="">
+              <i class="fa fa-pencil-square-o" aria-hidden="true"></i> edit
+            </a> / 
+            <a href="" class="text-danger">
+              <i class="fa fa-trash" aria-hidden="true"></i> delete
+            </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -7,10 +7,19 @@ import { environment } from '../environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { StudentsComponent } from './students/students.component';
+import { AddstudentComponent } from './addstudent/addstudent.component';
+import { EditstudentComponent } from './editstudent/editstudent.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    StudentsComponent,
+    AddstudentComponent,
+    EditstudentComponent
   ],
   imports: [
     BrowserModule,

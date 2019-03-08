@@ -13,52 +13,22 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>25</td>
-        <td>2</td>
-        <td>6547895621</td>
+      <tr *ngFor="let student of students">
+        <th scope="row">{{student.id}}</th>
+        <td>{{student.data.name}}</td>
+        <td>{{student.data.age}}</td>
+        <td>{{student.data.level}}</td>
+        <td>{{student.data.contact}}</td>
         <td>
-          <a href="" class="text-success">
+          <a [routerLink]="[student.id]" class="text-success">
             <i class="fa fa-eye" aria-hidden="true"></i> view
           </a> /
-          <a [routerLink]="[2, 'edit']">
+          <a [routerLink]="[student.id, 'edit']">
             <i class="fa fa-pencil-square-o" aria-hidden="true"></i> edit
           </a> / 
-          <a href="" class="text-danger">
+          <a href="javascript:0" class="text-danger" (click)="deleteStudent(student.id)">
             <i class="fa fa-trash" aria-hidden="true"></i> delete
           </a>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Kamdjou</td>
-        <td>25</td>
-        <td>2</td>
-        <td>6547895621</td>
-        <td>
-          <a href="">
-            <i class="fa fa-pencil-square-o" aria-hidden="true"></i> edit
-          </a> / 
-          <a href="" class="text-danger">
-            <i class="fa fa-trash" aria-hidden="true"></i> delete
-          </a>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Marie</td>
-        <td>35</td>
-        <td>1</td>
-        <td>6547895621</td>
-        <td>
-            <a href="">
-              <i class="fa fa-pencil-square-o" aria-hidden="true"></i> edit
-            </a> / 
-            <a href="" class="text-danger">
-              <i class="fa fa-trash" aria-hidden="true"></i> delete
-            </a>
         </td>
       </tr>
     </tbody>

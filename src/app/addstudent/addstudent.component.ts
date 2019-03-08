@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Router } from '@angular/router';
+
+//import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-addstudent',
@@ -7,10 +11,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddstudentComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(private db: AngularFirestore, private router: Router) { }
 
   ngOnInit() {
+  }
 
+  addStudent(form){
+    const student: any = {
+      name: form.fullName,
+      age: form.age,
+      level: form.level,
+      contact: form.contact
+    }
+    this.db.collection('students').add(student)
+    .then( () => {
+      console.log('Successfully created');
+      this.router.navigate(['/students']);
+    })
+    .catch( (error) => console.log('Error: ', error));
   }
 
 }

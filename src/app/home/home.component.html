@@ -1,14 +1,45 @@
 <div class="container mt-5">
-  <div class="card bg-success">
-    <div class="card-body text-center">
-      <h1>
-        Welcome to the Student App
-      </h1>
-    </div>
-  </div>
-  <ul>
-    <li class="text" *ngFor="let item of items | async">
-      {{item.name}} - {{item.age}}
-    </li>
-  </ul>
+    <div *ngIf="auth.user | async; then authenticated else guest">
+        <!-- template will replace this div -->
+      </div>
+
+      <!-- User NOT logged in -->
+      <ng-template #guest>
+          <div class="card bg-success">
+            <div class="card-body text-center">
+                <h1>Welcome back, GUEST</h1>
+            </div>
+          </div>
+          <a [routerLink]="['/login']">Please Login to access to your Dashboard</a>
+    </ng-template>  
+  
+      <!-- User logged in -->
+      <ng-template #authenticated>
+        <div *ngIf="auth.user | async as user">
+            <div class="card bg-success">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-2">
+                    <img class="profil-image" [src]="user.photoURL">
+                  </div>
+                  <div class="col-10">
+                    <h1>Welcome back, {{ user.displayName }}</h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </ng-template>
+  
 </div>
+
+
+
+
+
+<!-- <h3>Howdy, </h3>
+<p>UID: {{ user.uid }}</p>
+<p>Favorite Color: {{ "Black" || user?.favoriteColor }} </p> 
+<button (click)="auth.signOut()">Logout</button>-->
+
+

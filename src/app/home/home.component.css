@@ -1,0 +1,11 @@
+.profil-image{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+h1{
+    font-size: 52px;
+    color: #f5f5f5;
+    font-weight: 800;
+}

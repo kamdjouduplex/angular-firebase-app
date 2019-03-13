@@ -14,7 +14,7 @@ export class EmailComponent implements OnInit {
   }
 
   onSubmit(formData){
-    this.myService.emailLogin(formData.email, formData.password);
+    this.myService.emailLogin(formData.value.email, formData.value.password);
   }
 
 }

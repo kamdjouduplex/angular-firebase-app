@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { auth } from 'firebase';
@@ -7,7 +7,7 @@ import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firest
 //import { NotifyService } from 'notify-angular';
 
 import { Observable, of } from 'rxjs';
-import { switchMap} from 'rxjs/operators';
+import { switchMap } from 'rxjs/operators';
 
 interface User {
   uid: string;
@@ -46,7 +46,7 @@ export class AuthService {
   
 
   googleLogin() {
-    const provider = new auth.GoogleAuthProvider()
+    const provider = new auth.GoogleAuthProvider();
     return this.oAuthLogin(provider);
   }
 
@@ -69,7 +69,7 @@ export class AuthService {
       .signInWithEmailAndPassword(email, password)
       .then(credential => {
         //this.notify.success('Login Success!');
-        console.log('Signup successfully!');
+        console.log('Login successfully!');
         this.router.navigate(['/students']);
         return this.updateUserData(credential.user);
       })
@@ -122,6 +122,6 @@ export class AuthService {
   private handleError(error: Error) {
     console.error(error);
     //this.notify.error(error.message);
-    console.error(error.message);
+    alert(error.message);
   }
 }

@@ -10,7 +10,7 @@ import { AuthService } from '../core/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  error: any;
+  //error: any;
   constructor(private myService: AuthService, private router: Router) {}
 
   ngOnInit() {

@@ -14,7 +14,7 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit(formData){
-    this.myService.emailSignUp(formData.email, formData.password);
+    this.myService.emailSignUp(formData.value.email, formData.value.password);
   }
 
 }
